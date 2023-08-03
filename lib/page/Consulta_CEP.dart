@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:busca_cep/models/viacep_model.dart';
-import 'package:busca_cep/repositories/http/via_cep_repository.dart';
+import 'package:busca_cep/repositories/posts/impl/via_cep_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

@@ -1,6 +1,9 @@
 import 'package:busca_cep/models/Commt_model.dart';
-import 'package:busca_cep/repositories/http/Commet_Http_Repository.dart';
+import 'package:busca_cep/repositories/commets/comments_repository.dart';
+import 'package:busca_cep/repositories/posts/Commet_Http_Repository.dart';
 import 'package:flutter/material.dart';
+
+import '../repositories/posts/impl/post_Http_Repository.dart';
 
 class CommetsPage extends StatefulWidget {
   final int? PostId;
@@ -12,7 +15,7 @@ class CommetsPage extends StatefulWidget {
 }
 
 class _CommetsPageState extends State<CommetsPage> {
-  var CommtsRepository = CommetsHttpRepository();
+  CommentsRepository commtsRepository = CommetsHttpRepository();
   var commets = <CommtModel>[];
 
   @override
@@ -23,7 +26,7 @@ class _CommetsPageState extends State<CommetsPage> {
   }
 
   CarregarDados() async {
-    commets = await CommtsRepository.getCommmets(widget.PostId!);
+    commets = await commtsRepository.getCommmets(widget.PostId!);
     setState(() {});
   }
 

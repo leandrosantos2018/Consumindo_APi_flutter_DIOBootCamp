@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: const Text(
                   "Bucar CEP",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                 )),
             const SizedBox(
               height: 10,
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: const Text(
                   "Post",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                 )),
           ],
         ),

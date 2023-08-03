@@ -1,8 +1,10 @@
 import 'package:busca_cep/models/Post_Model.dart';
 import 'package:busca_cep/page/Commets_page.dart';
+import 'package:busca_cep/repositories/posts_Repository.dart';
 import 'package:flutter/material.dart';
 
-import '../repositories/dio/Post_Dio_Repository.dart';
+import '../repositories/posts/impl/Post_Dio_Repository.dart';
+import '../repositories/posts/impl/post_Http_Repository.dart';
 
 class PostsPage extends StatefulWidget {
   const PostsPage({super.key});
@@ -12,7 +14,7 @@ class PostsPage extends StatefulWidget {
 }
 
 class _PostsPageState extends State<PostsPage> {
-  var postRepository = PostsDioRepository();
+  PostRepository postRepository = PostsDioRepository();
   var posts = <PostModel>[];
 
   @override
