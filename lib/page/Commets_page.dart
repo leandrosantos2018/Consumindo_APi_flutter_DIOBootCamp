@@ -3,8 +3,6 @@ import 'package:busca_cep/repositories/commets/comments_repository.dart';
 import 'package:busca_cep/repositories/posts/Commet_Http_Repository.dart';
 import 'package:flutter/material.dart';
 
-import '../repositories/posts/impl/post_Http_Repository.dart';
-
 class CommetsPage extends StatefulWidget {
   final int? PostId;
 
@@ -37,7 +35,7 @@ class _CommetsPageState extends State<CommetsPage> {
       appBar: AppBar(title: Text("comentarios do Post : ${widget.PostId!}")),
       body: Container(
         child: commets.length == 0
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : ListView.builder(
                 itemCount: commets.length,
                 itemBuilder: (_, int index) {
@@ -47,7 +45,7 @@ class _CommetsPageState extends State<CommetsPage> {
                     padding: const EdgeInsets.all(16),
                     child: Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                          const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

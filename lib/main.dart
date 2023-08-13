@@ -1,6 +1,4 @@
-import 'package:busca_cep/page/Consulta_CEP.dart';
 import 'package:busca_cep/page/Home_page.dart';
-import 'package:busca_cep/page/Post_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,3 +16,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

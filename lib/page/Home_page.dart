@@ -1,6 +1,9 @@
+import 'package:busca_cep/models/marvel_characters.dart';
 import 'package:busca_cep/page/Consulta_CEP.dart';
 import 'package:busca_cep/page/Post_page.dart';
 import 'package:flutter/material.dart';
+
+import '../repositories/marvel/marve_api_reporitory.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,6 +40,19 @@ class HomePage extends StatelessWidget {
                 },
                 child: const Text(
                   "Post",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
+                )),
+            InkWell(
+                onTap: () async {
+                  var marvelrepository = MarcvelRepository();
+                  var heros = await marvelrepository.getCaharactres();
+                  print(heros);
+                  Navigator.pop(context);
+                  // Navigator.push(
+                  //     context, MaterialPageRoute(builder: (_) => PostsPage()));
+                },
+                child: const Text(
+                  "Herois",
                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                 )),
           ],

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:busca_cep/models/viacep_model.dart';
 import 'package:busca_cep/repositories/posts/impl/via_cep_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class ConsultaCEP extends StatefulWidget {
   const ConsultaCEP({super.key});
@@ -13,7 +12,7 @@ class ConsultaCEP extends StatefulWidget {
 }
 
 class _ConsultaCEPState extends State<ConsultaCEP> {
-  var CepController = TextEditingController(text: "");
+  var cepController = TextEditingController(text: "");
   bool loanding = false;
   var viaCEPRepository = ViaCEpRepository();
   var viacepModel = ViaCEPModel();
@@ -23,7 +22,7 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text('Buscar CEP'),
+        title: const Text('Buscar CEP'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -40,7 +39,7 @@ class _ConsultaCEPState extends State<ConsultaCEP> {
               height: 15,
             ),
             TextField(
-                controller: CepController,
+                controller: cepController,
                 // maxLength: 8,
                 keyboardType: TextInputType.number,
                 onChanged: (String value) async {

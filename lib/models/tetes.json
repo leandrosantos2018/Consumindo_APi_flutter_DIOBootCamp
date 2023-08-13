@@ -1,0 +1,25 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2023 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2023 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2023 MARVEL</a>",
+    "etag": "338d56ad17f81144b2da89e8f8dba50c6a24fd46",
+    "data": {
+        "offset": 0,
+        "limit": 20,
+        "total": 1562,
+        "count": 20,
+        "results": [
+            {
+                "id": 1011334,
+                "name": "3-D Man",
+                "description": "",
+                "modified": "2014-04-29T14:18:17-0400",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+                    "extension": "jpg"
+                }]
+
+    }
+}
