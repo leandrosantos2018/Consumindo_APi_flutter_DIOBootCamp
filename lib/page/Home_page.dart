@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:busca_cep/models/marvel_characters.dart';
+import 'package:busca_cep/models/tarefas_back4app_model.dart';
 import 'package:busca_cep/page/Consulta_CEP.dart';
 import 'package:busca_cep/page/Post_page.dart';
 import 'package:busca_cep/page/Tarefas_page.dart';
@@ -59,10 +62,17 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
                 )),
             InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => TarefasPage()));
+                onTap: () async {
+                  TerefaBack4AppREpository tarefasRepository =
+                      TerefaBack4AppREpository();
+                  var _tarefas = await tarefasRepository.obterTarefas()
+                      as TarefasBack4AppModel;
+                  print(_tarefas.tarefas[0]);
+
+                  // print(_tarefas.toJson().toString());
+                  // Navigator.pop(context);
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (_) => TarefasPage()));
                 },
                 child: const Text(
                   "Tarefas",

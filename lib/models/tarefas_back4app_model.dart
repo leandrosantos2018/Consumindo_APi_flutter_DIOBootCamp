@@ -1,7 +1,7 @@
 class TarefasBack4AppModel {
   List<TarefaBack4AppModel> tarefas = [];
 
-  TarefasBack4AppModel(this.tarefas);
+  TarefasBack4AppModel( this.tarefas);
 
   TarefasBack4AppModel.fromJson(Map<String, dynamic> json) {
     if (json['results'] != null) {

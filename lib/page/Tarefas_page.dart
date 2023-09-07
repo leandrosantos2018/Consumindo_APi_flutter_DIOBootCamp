@@ -16,11 +16,12 @@ class _TarefasPageState extends State<TarefasPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    obterTarefas();
   }
 
-  void obterTarefas() async {
-    _tarefas = (await tarefasRepository.obterTarefas());
+  carregarDados() async {
+    _tarefas = await tarefasRepository.obterTarefas() as TarefasBack4AppModel;
+    print(_tarefas.tarefas.toList());
+    setState(() {});
   }
 
   @override
@@ -30,30 +31,29 @@ class _TarefasPageState extends State<TarefasPage> {
           title: Text("Todo"),
         ),
         body: ListView.builder(
-                itemCount: _tarefas.tarefas.length,
-                itemBuilder: (_, index) {
-                  var postagem = _tarefas.tarefas[index];
-                  setState(() {});
-                  return Container(
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    child: InkWell(
-                      onTap: () {
-                        print(postagem.objectId);
-                      },
-                      child: Card(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            postagem.descricao,
-                            style: const TextStyle(fontWeight: FontWeight.w700),
-                          ),
-                          Text(postagem.concluindo.toString()),
-                        ],
-                      )),
-                    ),
-                  );
-                }));
+            itemCount: _tarefas.tarefas.length,
+            itemBuilder: (_, index) {
+              var postagem = _tarefas.tarefas[index];
+              setState(() {});
+              return Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: InkWell(
+                  onTap: () {
+                    print(postagem.objectId);
+                  },
+                  child: Card(
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        postagem.descricao,
+                        style: const TextStyle(fontWeight: FontWeight.w700),
+                      ),
+                      Text(postagem.concluindo.toString()),
+                    ],
+                  )),
+                ),
+              );
+            }));
   }
 }

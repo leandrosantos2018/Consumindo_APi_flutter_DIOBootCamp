@@ -10,9 +10,9 @@ class MarvelRepository {
   Future<marvel_characters> getCaharactres() async {
     var dio = Dio();
     var ts = DateTime.now().microsecondsSinceEpoch.toString();
-    var apikeyPrivate = "7f4f9229f5c73580bc71769129de1fc8818ee125";
+    var apikeyPrivate = dotenv.get("keyPrivate"); //"7f4f9229f5c73580bc71769129de1fc8818ee125";
 
-    var apikeypublic = "3c194e2abbbe905cbd079ed7cb09821b";
+    var apikeypublic = dotenv.get("keyPublic"); //"3c194e2abbbe905cbd079ed7cb09821b";
     var hash = generateMd5(ts + apikeypublic + apikeyPrivate);
 
     var query = "ts=$ts&apikey=$apikeypublic&hash=$hash";
